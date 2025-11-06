@@ -1,4 +1,4 @@
-package co.com.AutoFacebook.runners;
+package co.com.AutoLocal.runners;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/autenticacion_facebook.feature",
-        glue = {"co.com.AutoFacebook.stepsdefinitions", "co.com.AutoFacebook.utils.hooks"},
+        features = "src/test/resources/features/autenticacion_local.feature",
+        glue = {"co.com.AutoLocal.stepsdefinitions", "co.com.AutoLocal.utils.hooks"},
         snippets = SnippetType.CAMELCASE)
 
 public class AutenticacionRunner {
