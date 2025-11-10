@@ -57,5 +57,9 @@ public class UsuariosPage {
     // Ajusta este ID cuando veamos el HTML completo del mensaje de éxito
     public static final Target MENSAJE_EXITO = Target.the("mensaje de éxito al crear usuario")
             .locatedBy("//*[contains(text(),'Usuario registrado') or contains(text(),'creado') or contains(text(),'éxito')]");
+    public static Target botonEliminarDelUsuario(String nombreUsuario) {
+        return Target.the("botón eliminar del usuario")
+                .located(By.xpath("//tr[td[contains(text(),'" + nombreUsuario + "')]]//button[@title='Eliminar']"));
+    }
 
 }

@@ -1,17 +1,22 @@
 package co.com.AutoLocal.runners;
 
+
 import cucumber.api.CucumberOptions;
-import cucumber.api.SnippetType;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/crear_usuario.feature",
+        features = {"src/test/resources/features/eliminar_usuario.feature"},
         glue = {"co.com.AutoLocal.stepsdefinitions"},
-        snippets = SnippetType.CAMELCASE,
+        tags = {"@EliminarUsuario"},
         plugin = {"pretty"}
 )
-public class CrearUsuarioRunner {
+public class EliminarUsuarioRunner {
 
+    @Test
+    public void run() {
+        // Método vacío para que Gradle reconozca el test
+    }
 }

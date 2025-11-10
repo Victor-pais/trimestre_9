@@ -49,3 +49,17 @@ dependencies {
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
     implementation group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
 }
+
+test {
+    useJUnit()
+
+    include '**/*Test.class'
+    include '**/*Tests.class'
+    include '**/*Runner.class'
+
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+        showStandardStreams = true
+    }
+}
