@@ -3,9 +3,6 @@ package co.com.AutoLocal.userinterface.CreacionUsuarios;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-
-
-
 import org.openqa.selenium.By;
 
 public class LoginPage {

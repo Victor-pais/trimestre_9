@@ -79,6 +79,6 @@ public class CrearUsuarioStepDefinition {
                         .forNoMoreThan(10).seconds(),
                 Ensure.that(UsuariosPage.MENSAJE_EXITO).isDisplayed()
         );
-        System.out.println("✅ El sistema muestra un mensaje de confirmación exitosamente.");
+        System.out.println(" El sistema muestra un mensaje de confirmación exitosamente.");
     }
 }

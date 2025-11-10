@@ -62,4 +62,9 @@ public class UsuariosPage {
                 .located(By.xpath("//tr[td[contains(text(),'" + nombreUsuario + "')]]//button[@title='Eliminar']"));
     }
 
+    public static Target botonEditarDelUsuario(String nombreUsuario) {
+        return Target.the("botón editar del usuario")
+                .located(By.xpath("//tr[td[contains(text(),'" + nombreUsuario + "')]]//button[@title='Editar']"));
+    }
+
 }

@@ -2,11 +2,9 @@ package co.com.AutoLocal.stepsdefinitions;
 
 import co.com.AutoLocal.tasks.EliminacionUsuario.EliminarUsuario;
 import co.com.AutoLocal.questions.UsuarioNoExiste;
-
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
-
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
