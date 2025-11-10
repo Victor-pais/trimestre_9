@@ -1,0 +1,497 @@
+<html lang="en"><head>
+  <script type="module" src="/@vite/client"></script>
+
+  <meta charset="utf-8">
+  <title>Frontend</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css"><style>
+
+.dashboard-container[_ngcontent-ng-c2165558596] {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+.sidebar[_ngcontent-ng-c2165558596] {
+  width: 220px;
+  background: #043d3d;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.user-info[_ngcontent-ng-c2165558596] {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.user-info[_ngcontent-ng-c2165558596]   .avatar[_ngcontent-ng-c2165558596] {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+.sidebar[_ngcontent-ng-c2165558596]   nav[_ngcontent-ng-c2165558596]   ul.menu[_ngcontent-ng-c2165558596] {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sidebar[_ngcontent-ng-c2165558596]   nav[_ngcontent-ng-c2165558596]   ul.menu[_ngcontent-ng-c2165558596]   li.menu-item[_ngcontent-ng-c2165558596] {
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+.sidebar[_ngcontent-ng-c2165558596]   nav[_ngcontent-ng-c2165558596]   ul.menu[_ngcontent-ng-c2165558596]   li.menu-item[_ngcontent-ng-c2165558596]:hover {
+  background: #065656;
+  transform: scale(1.03);
+}
+.sidebar[_ngcontent-ng-c2165558596]   nav[_ngcontent-ng-c2165558596]   ul.menu[_ngcontent-ng-c2165558596]   li.menu-item.active[_ngcontent-ng-c2165558596] {
+  background: #0a7a7a;
+  font-weight: bold;
+}
+.logout[_ngcontent-ng-c2165558596] {
+  background: #ff4d4f;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: auto;
+}
+.logout[_ngcontent-ng-c2165558596]:hover {
+  background: #ff1f1f;
+}
+.main-content[_ngcontent-ng-c2165558596] {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.header[_ngcontent-ng-c2165558596] {
+  background: #e6f0f0;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.header[_ngcontent-ng-c2165558596]   .logo-header[_ngcontent-ng-c2165558596] {
+  width: 50px;
+  height: 50px;
+}
+.content[_ngcontent-ng-c2165558596] {
+  padding: 20px;
+}
+.cards[_ngcontent-ng-c2165558596] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+.card[_ngcontent-ng-c2165558596] {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-align: center;
+  flex: 1 1 calc(25% - 15px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card[_ngcontent-ng-c2165558596]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 1200px) {
+  .card[_ngcontent-ng-c2165558596] {
+    flex: 1 1 calc(33.33% - 15px);
+  }
+}
+@media (max-width: 768px) {
+  .card[_ngcontent-ng-c2165558596] {
+    flex: 1 1 calc(50% - 15px);
+  }
+}
+@media (max-width: 480px) {
+  .card[_ngcontent-ng-c2165558596] {
+    flex: 1 1 100%;
+  }
+}
+.footer[_ngcontent-ng-c2165558596] {
+  text-align: center;
+  padding: 15px 20px;
+  background: #e6f0f0;
+  margin-top: auto;
+  font-size: 14px;
+  color: #555;
+}
+/*# sourceMappingURL=/base-layout.component.css.map */</style><style>
+
+.usuarios-container[_ngcontent-ng-c4060353497] {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+h2[_ngcontent-ng-c4060353497] {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+.acciones-bar[_ngcontent-ng-c4060353497] {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+}
+.buscador[_ngcontent-ng-c4060353497] {
+  display: flex;
+  align-items: center;
+  background: #f1f3f6;
+  padding: 6px 12px;
+  border-radius: 25px;
+}
+.buscador[_ngcontent-ng-c4060353497]   input[_ngcontent-ng-c4060353497] {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-left: 8px;
+}
+.btn-nuevo[_ngcontent-ng-c4060353497] {
+  background: #27ae60;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-nuevo1[_ngcontent-ng-c4060353497] {
+  background: #308ce2;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-nuevo[_ngcontent-ng-c4060353497]:hover {
+  background: #219150;
+}
+.btn-nuevo1[_ngcontent-ng-c4060353497]:hover {
+  background: #308ce2;
+}
+.tabla-wrapper[_ngcontent-ng-c4060353497] {
+  overflow-x: auto;
+}
+.tabla-usuarios[_ngcontent-ng-c4060353497] {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.tabla-usuarios[_ngcontent-ng-c4060353497]   th[_ngcontent-ng-c4060353497] {
+  background: #34495e;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+.tabla-usuarios[_ngcontent-ng-c4060353497]   td[_ngcontent-ng-c4060353497] {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  color: #2c3e50;
+}
+.tabla-usuarios[_ngcontent-ng-c4060353497]   tr[_ngcontent-ng-c4060353497]:hover {
+  background: #f9f9f9;
+}
+.acciones-col[_ngcontent-ng-c4060353497] {
+  text-align: center;
+}
+.acciones[_ngcontent-ng-c4060353497] {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+.btn-accion[_ngcontent-ng-c4060353497] {
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+.btn-accion.editar[_ngcontent-ng-c4060353497] {
+  background: url(/assets/usuario.png) no-repeat center center/cover;
+}
+.btn-accion.eliminar[_ngcontent-ng-c4060353497] {
+  background: url(/assets/eliminarusuario.png) no-repeat center center/cover;
+}
+.btn-accion[_ngcontent-ng-c4060353497]:hover {
+  transform: scale(2.1);
+}
+.modal[_ngcontent-ng-c4060353497] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content[_ngcontent-ng-c4060353497] {
+  background: #fff;
+  padding: 20px;
+  width: 600px;
+  border-radius: 10px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: _ngcontent-ng-c4060353497_fadeIn 0.3s ease-in-out;
+}
+.form-grid[_ngcontent-ng-c4060353497] {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+input[_ngcontent-ng-c4060353497], 
+select[_ngcontent-ng-c4060353497] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+}
+.modal-buttons[_ngcontent-ng-c4060353497] {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.btn-guardar[_ngcontent-ng-c4060353497] {
+  background: #27ae60;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-cancelar[_ngcontent-ng-c4060353497] {
+  background: #bdc3c7;
+  color: #2c3e50;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+@keyframes _ngcontent-ng-c4060353497_fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.btn-nuevo[_ngcontent-ng-c4060353497]   i[_ngcontent-ng-c4060353497] {
+  font-size: 1.3rem;
+}
+.acciones-bar[_ngcontent-ng-c4060353497] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.buscadores[_ngcontent-ng-c4060353497] {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.buscador[_ngcontent-ng-c4060353497] {
+  display: flex;
+  align-items: center;
+  background: #f1f3f6;
+  padding: 6px 12px;
+  border-radius: 25px;
+  min-width: 220px;
+}
+.buscador[_ngcontent-ng-c4060353497]   i[_ngcontent-ng-c4060353497] {
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+.buscador[_ngcontent-ng-c4060353497]   input[_ngcontent-ng-c4060353497] {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-left: 8px;
+  width: 100%;
+  font-size: 0.95rem;
+}
+.tabla-usuarios[_ngcontent-ng-c4060353497]   th[_ngcontent-ng-c4060353497] {
+  background: #2c3e50;
+  color: #fff;
+  padding: 12px;
+}
+.btn-accion.consultar[_ngcontent-ng-c4060353497] {
+  background: url(/assets/entrevista.png) no-repeat center center/cover;
+}
+.btn-accion.consultar[_ngcontent-ng-c4060353497]   i[_ngcontent-ng-c4060353497] {
+  font-size: 1.1rem;
+}
+.detalles-lista[_ngcontent-ng-c4060353497] {
+  list-style: none;
+  padding: 0;
+}
+.detalles-lista[_ngcontent-ng-c4060353497]   li[_ngcontent-ng-c4060353497] {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+.detalles-usuario[_ngcontent-ng-c4060353497] {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.detalles-usuario[_ngcontent-ng-c4060353497]   li[_ngcontent-ng-c4060353497] {
+  margin: 0.5rem 0;
+  font-size: 15px;
+}
+.alerta[_ngcontent-ng-c4060353497] {
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+.alerta.exito[_ngcontent-ng-c4060353497] {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+.alerta.error[_ngcontent-ng-c4060353497] {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+.alerta[_ngcontent-ng-c4060353497]   .cerrar[_ngcontent-ng-c4060353497] {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+.spinner-container[_ngcontent-ng-c4060353497] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+.spinner[_ngcontent-ng-c4060353497] {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: _ngcontent-ng-c4060353497_spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+@keyframes _ngcontent-ng-c4060353497_spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.paginacion[_ngcontent-ng-c4060353497] {
+  margin-top: 15px;
+  text-align: center;
+}
+.dropdown-menu[_ngcontent-ng-c4060353497] {
+  min-width: 180px;
+}
+.dropdown-menu[_ngcontent-ng-c4060353497]   i[_ngcontent-ng-c4060353497] {
+  margin-right: 6px;
+}
+.dropdown-menu[_ngcontent-ng-c4060353497] {
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 5px 0;
+}
+.dropdown-item[_ngcontent-ng-c4060353497] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+.dropdown-item[_ngcontent-ng-c4060353497]:hover {
+  background-color: #0d6efd;
+  color: #fff !important;
+  transform: translateX(5px);
+}
+.dropdown-item[_ngcontent-ng-c4060353497]   i[_ngcontent-ng-c4060353497] {
+  transition: transform 0.3s ease;
+}
+.dropdown-item[_ngcontent-ng-c4060353497]:hover   i[_ngcontent-ng-c4060353497] {
+  transform: translateX(3px);
+}
+.btn-nuevo1[_ngcontent-ng-c4060353497] {
+  background: #2684ff;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-nuevo1[_ngcontent-ng-c4060353497]:hover {
+  background: #157347;
+  box-shadow: 0 0 12px rgba(25, 135, 84, 0.6);
+  transform: translateY(-2px);
+  color: #fff;
+}
+.btn-nuevo1[_ngcontent-ng-c4060353497]   i[_ngcontent-ng-c4060353497] {
+  transition: transform 0.3s ease;
+}
+.btn-nuevo1[_ngcontent-ng-c4060353497]:hover   i[_ngcontent-ng-c4060353497] {
+  transform: translateY(-2px);
+}
+.dropdown[_ngcontent-ng-c4060353497]:hover   .dropdown-menu[_ngcontent-ng-c4060353497] {
+  display: block;
+}
+.descargas-container[_ngcontent-ng-c4060353497] {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+/*# sourceMappingURL=/usuarios.component.css.map */</style><style>.ngx-pagination{margin-left:0;margin-bottom:1rem}.ngx-pagination:before,.ngx-pagination:after{content:" ";display:table}.ngx-pagination:after{clear:both}.ngx-pagination li{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;margin-right:.0625rem;border-radius:0}.ngx-pagination li{display:inline-block}.ngx-pagination a,.ngx-pagination button{color:#0a0a0a;display:block;padding:.1875rem .625rem;border-radius:0}.ngx-pagination a:hover,.ngx-pagination button:hover{background:#e6e6e6}.ngx-pagination .current{padding:.1875rem .625rem;background:#2199e8;color:#fefefe;cursor:default}.ngx-pagination .disabled{padding:.1875rem .625rem;color:#cacaca;cursor:default}.ngx-pagination .disabled:hover{background:transparent}.ngx-pagination a,.ngx-pagination button{cursor:pointer}.ngx-pagination .pagination-previous a:before,.ngx-pagination .pagination-previous.disabled:before{content:"\ab";display:inline-block;margin-right:.5rem}.ngx-pagination .pagination-next a:after,.ngx-pagination .pagination-next.disabled:after{content:"\bb";display:inline-block;margin-left:.5rem}.ngx-pagination .show-for-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.ngx-pagination .small-screen{display:none}@media screen and (max-width: 601px){.ngx-pagination.responsive .small-screen{display:inline-block}.ngx-pagination.responsive li:not(.small-screen):not(.pagination-previous):not(.pagination-next){display:none}}
+</style></head>
+<body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["submit","input","compositionstart","compositionend"],["blur"]);</script>
+  <app-root ng-version="20.2.4" ng-server-context="ssg"><router-outlet></router-outlet><app-base-layout _nghost-ng-c2165558596=""><div _ngcontent-ng-c2165558596="" class="dashboard-container"><aside _ngcontent-ng-c2165558596="" class="sidebar"><div _ngcontent-ng-c2165558596="" class="user-info"><img _ngcontent-ng-c2165558596="" src="assets/admin.png" alt="Usuario" class="avatar"><p _ngcontent-ng-c2165558596="">Administrador</p></div><nav _ngcontent-ng-c2165558596=""><ul _ngcontent-ng-c2165558596="" class="menu"><li _ngcontent-ng-c2165558596="" routerlink="/admin" routerlinkactive="active" class="menu-item" tabindex="0"> 🏠 <span _ngcontent-ng-c2165558596="">Inicio</span></li><li _ngcontent-ng-c2165558596="" routerlink="/usuarios" routerlinkactive="active" class="menu-item active" tabindex="0"> 👤 <span _ngcontent-ng-c2165558596="">Usuarios</span></li><li _ngcontent-ng-c2165558596="" routerlink="/vehiculos" routerlinkactive="active" class="menu-item" tabindex="0"> 🚚 <span _ngcontent-ng-c2165558596="">Vehículos</span></li><li _ngcontent-ng-c2165558596="" routerlink="/proveedores" routerlinkactive="active" class="menu-item" tabindex="0"> 🏭 <span _ngcontent-ng-c2165558596="">Proveedores</span></li><li _ngcontent-ng-c2165558596="" routerlink="/productos" routerlinkactive="active" class="menu-item" tabindex="0"> 📦 <span _ngcontent-ng-c2165558596="">Productos</span></li><li _ngcontent-ng-c2165558596="" routerlink="/mercancias" routerlinkactive="active" class="menu-item" tabindex="0"> 📦 <span _ngcontent-ng-c2165558596="">Mercancías</span></li><li _ngcontent-ng-c2165558596="" routerlink="/despachos" routerlinkactive="active" class="menu-item" tabindex="0"> 🚛 <span _ngcontent-ng-c2165558596="">Despachos</span></li><li _ngcontent-ng-c2165558596="" routerlink="/entregas" routerlinkactive="active" class="menu-item" tabindex="0"> 📬 <span _ngcontent-ng-c2165558596="">Entregas</span></li><li _ngcontent-ng-c2165558596="" routerlink="/devoluciones" routerlinkactive="active" class="menu-item" tabindex="0"> ↩️ <span _ngcontent-ng-c2165558596="">Devoluciones</span></li><li _ngcontent-ng-c2165558596="" routerlink="/seguimientos" routerlinkactive="active" class="menu-item" tabindex="0"> 🔎 <span _ngcontent-ng-c2165558596="">Seguimientos</span></li><li _ngcontent-ng-c2165558596="" routerlink="/tipodocumentos" routerlinkactive="active" class="menu-item" tabindex="0"> 📄 <span _ngcontent-ng-c2165558596="">Tipos documento</span></li><li _ngcontent-ng-c2165558596="" routerlink="/tiporol" routerlinkactive="active" class="menu-item" tabindex="0"> ⚙️ <span _ngcontent-ng-c2165558596="">Tipos rol</span></li><li _ngcontent-ng-c2165558596="" routerlink="/tipospago" routerlinkactive="active" class="menu-item" tabindex="0"> 💳 <span _ngcontent-ng-c2165558596="">Tipos pago</span></li></ul></nav><button _ngcontent-ng-c2165558596="" class="logout">Cerrar sesión</button></aside><div _ngcontent-ng-c2165558596="" class="main-content"><header _ngcontent-ng-c2165558596="" class="header"><img _ngcontent-ng-c2165558596="" src="assets/sox-logo.png" alt="Sox Logo" class="logo-header"><h1 _ngcontent-ng-c2165558596="">Sox</h1></header><section _ngcontent-ng-c2165558596="" class="content"><router-outlet _ngcontent-ng-c2165558596=""></router-outlet><app-usuarios _nghost-ng-c4060353497=""><div _ngcontent-ng-c4060353497="" class="usuarios-container"><h2 _ngcontent-ng-c4060353497="">👥 Gestión de Usuarios</h2><div _ngcontent-ng-c4060353497="" class="alerta error"> ❌ Información incorrecta, intente nuevamente. <button _ngcontent-ng-c4060353497="" class="cerrar">×</button></div><!--container--><div _ngcontent-ng-c4060353497="" class="descargas-container"><div _ngcontent-ng-c4060353497="" class="dropdown"><button _ngcontent-ng-c4060353497="" type="button" class="btn-nuevo1"> ⬇️ Descargas </button><!--container--></div></div><div _ngcontent-ng-c4060353497="" class="acciones-bar"><button _ngcontent-ng-c4060353497="" id="btnNuevoUsuario" class="btn-nuevo"><i _ngcontent-ng-c4060353497="" class="bi bi-person-plus"></i> Nuevo </button><div _ngcontent-ng-c4060353497="" class="buscadores"><div _ngcontent-ng-c4060353497="" class="buscador"><i _ngcontent-ng-c4060353497="" class="fas fa-user"></i><input _ngcontent-ng-c4060353497="" type="text" placeholder="Buscar por nombre..." class="ng-untouched ng-pristine ng-valid"></div><div _ngcontent-ng-c4060353497="" class="buscador"><i _ngcontent-ng-c4060353497="" class="fas fa-id-card"></i><input _ngcontent-ng-c4060353497="" type="text" placeholder="Buscar por cédula..." class="ng-untouched ng-pristine ng-valid"></div></div></div><div _ngcontent-ng-c4060353497="" class="tabla-wrapper"><table _ngcontent-ng-c4060353497="" class="tabla-usuarios"><thead _ngcontent-ng-c4060353497=""><tr _ngcontent-ng-c4060353497=""><th _ngcontent-ng-c4060353497="">ID</th><th _ngcontent-ng-c4060353497="">Usuario</th><th _ngcontent-ng-c4060353497="">Nombres</th><th _ngcontent-ng-c4060353497="">Cédula</th><th _ngcontent-ng-c4060353497="">Rol</th><th _ngcontent-ng-c4060353497="" class="acciones-col">Acciones</th></tr></thead><tbody _ngcontent-ng-c4060353497=""><tr _ngcontent-ng-c4060353497=""><td _ngcontent-ng-c4060353497="">1</td><td _ngcontent-ng-c4060353497="">admin</td><td _ngcontent-ng-c4060353497="">Admin</td><td _ngcontent-ng-c4060353497="">123456789</td><td _ngcontent-ng-c4060353497="">Administrador</td><td _ngcontent-ng-c4060353497="" class="acciones"><button _ngcontent-ng-c4060353497="" title="Consultar" class="btn-accion consultar"></button><button _ngcontent-ng-c4060353497="" title="Editar" class="btn-accion editar"></button><button _ngcontent-ng-c4060353497="" title="Eliminar" class="btn-accion eliminar"></button></td></tr><tr _ngcontent-ng-c4060353497=""><td _ngcontent-ng-c4060353497="">2</td><td _ngcontent-ng-c4060353497="">bodeguero</td><td _ngcontent-ng-c4060353497="">Bodeguero</td><td _ngcontent-ng-c4060353497="">987654321</td><td _ngcontent-ng-c4060353497="">Bodeguero</td><td _ngcontent-ng-c4060353497="" class="acciones"><button _ngcontent-ng-c4060353497="" title="Consultar" class="btn-accion consultar"></button><button _ngcontent-ng-c4060353497="" title="Editar" class="btn-accion editar"></button><button _ngcontent-ng-c4060353497="" title="Eliminar" class="btn-accion eliminar"></button></td></tr><tr _ngcontent-ng-c4060353497=""><td _ngcontent-ng-c4060353497="">3</td><td _ngcontent-ng-c4060353497="">conductor</td><td _ngcontent-ng-c4060353497="">Conductor</td><td _ngcontent-ng-c4060353497="">192837465</td><td _ngcontent-ng-c4060353497="">Conductor</td><td _ngcontent-ng-c4060353497="" class="acciones"><button _ngcontent-ng-c4060353497="" title="Consultar" class="btn-accion consultar"></button><button _ngcontent-ng-c4060353497="" title="Editar" class="btn-accion editar"></button><button _ngcontent-ng-c4060353497="" title="Eliminar" class="btn-accion eliminar"></button></td></tr><tr _ngcontent-ng-c4060353497=""><td _ngcontent-ng-c4060353497="">4</td><td _ngcontent-ng-c4060353497="">cliente</td><td _ngcontent-ng-c4060353497="">Cliente</td><td _ngcontent-ng-c4060353497="">564738291</td><td _ngcontent-ng-c4060353497="">Cliente</td><td _ngcontent-ng-c4060353497="" class="acciones"><button _ngcontent-ng-c4060353497="" title="Consultar" class="btn-accion consultar"></button><button _ngcontent-ng-c4060353497="" title="Editar" class="btn-accion editar"></button><button _ngcontent-ng-c4060353497="" title="Eliminar" class="btn-accion eliminar"></button></td></tr><!--container--></tbody></table></div><pagination-controls _ngcontent-ng-c4060353497="" class="paginacion"><pagination-template><nav role="navigation" aria-label="Pagination"><ul class="ngx-pagination"><li class="pagination-previous disabled"><!--container--><span aria-disabled="true"> Previous <span class="show-for-sr">page</span></span><!--container--></li><!--container--><li class="small-screen"> 1 / 1 </li><li class="current"><!--container--><span aria-live="polite"><span class="show-for-sr">You're on page </span><span>1</span></span><!--ng-container--><!--container--></li><!--container--><li class="pagination-next disabled"><!--container--><span aria-disabled="true"> Next <span class="show-for-sr">page</span></span><!--container--></li><!--container--></ul><!--container--></nav></pagination-template></pagination-controls><!--container--><div _ngcontent-ng-c4060353497="" class="modal"><div _ngcontent-ng-c4060353497="" class="modal-content"><h3 _ngcontent-ng-c4060353497="">➕ Nuevo Usuario</h3><div _ngcontent-ng-c4060353497="" class="form-grid"><input _ngcontent-ng-c4060353497="" placeholder="Nombre de usuario" required="" class="ng-dirty ng-valid ng-touched"><input _ngcontent-ng-c4060353497="" placeholder="Nombres" required="" class="ng-dirty ng-valid ng-touched"><input _ngcontent-ng-c4060353497="" placeholder="Apellidos" required="" class="ng-dirty ng-valid ng-touched"><select _ngcontent-ng-c4060353497="" id="selectTipoDocumento" required="" class="ng-dirty ng-valid ng-touched"><option _ngcontent-ng-c4060353497="" value="">Seleccione Tipo Documento</option><option _ngcontent-ng-c4060353497="" value="1">Cédula de Ciudadanía</option><option _ngcontent-ng-c4060353497="" value="2">Tarjeta de Identidad</option><option _ngcontent-ng-c4060353497="" value="3">Pasaporte</option><option _ngcontent-ng-c4060353497="" value="4">Cédula de Extranjería</option><!--container--></select><input _ngcontent-ng-c4060353497="" id="inputDocumento" placeholder="Número Documento" required="" class="ng-dirty ng-valid ng-touched"><input _ngcontent-ng-c4060353497="" placeholder="Celular" class="ng-valid ng-dirty ng-touched"><input _ngcontent-ng-c4060353497="" placeholder="Dirección" class="ng-valid ng-dirty ng-touched"><input _ngcontent-ng-c4060353497="" placeholder="Ciudad" class="ng-valid ng-dirty ng-touched"><input _ngcontent-ng-c4060353497="" type="email" placeholder="Email" required="" class="ng-dirty ng-valid ng-touched"><input _ngcontent-ng-c4060353497="" type="password" placeholder="Contraseña" class="ng-dirty ng-valid ng-touched" required=""><select _ngcontent-ng-c4060353497="" id="selectRol" required="" class="ng-dirty ng-valid ng-touched"><option _ngcontent-ng-c4060353497="" value="">Seleccione Rol</option><option _ngcontent-ng-c4060353497="" value="1">Administrador</option><option _ngcontent-ng-c4060353497="" value="2">Bodeguero</option><option _ngcontent-ng-c4060353497="" value="3">Conductor</option><option _ngcontent-ng-c4060353497="" value="4">Cliente</option><!--container--></select></div><div _ngcontent-ng-c4060353497="" class="modal-buttons"><button _ngcontent-ng-c4060353497="" class="btn-guardar">Crear</button><button _ngcontent-ng-c4060353497="" class="btn-cancelar">Cancelar</button></div></div></div><!--container--></div><!--container--><!--container--></app-usuarios><!--container--></section><footer _ngcontent-ng-c2165558596="" class="footer"><p _ngcontent-ng-c2165558596="">© 2025 Sox. Sistema de gestión y control de logística. Todos los derechos reservados.</p></footer></div></div></app-base-layout><!--container--></app-root>
+<script src="main.js" type="module"></script>
+
+<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"15":"t0"},"c":{"15":[]}},{"c":{"0":[{"i":"c236014109","r":1}]}}]}</script></body></html>

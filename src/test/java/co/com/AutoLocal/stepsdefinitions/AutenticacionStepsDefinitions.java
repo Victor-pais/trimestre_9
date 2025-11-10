@@ -1,8 +1,8 @@
 package co.com.AutoLocal.stepsdefinitions;
 
 import co.com.AutoLocal.models.CredencialesInicioSesion;
-import co.com.AutoLocal.tasks.AbrirPagina;
-import co.com.AutoLocal.tasks.Autenticarse;
+import co.com.AutoLocal.tasks.Login.AbrirPagina;
+import co.com.AutoLocal.tasks.Login.Autenticarse;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
