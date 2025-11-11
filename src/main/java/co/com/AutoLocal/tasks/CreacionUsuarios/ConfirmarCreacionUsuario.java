@@ -1,6 +1,6 @@
 package co.com.AutoLocal.tasks.CreacionUsuarios;
 
-import co.com.AutoLocal.userinterface.CreacionUsuarios.UsuariosPage;
+import co.com.AutoLocal.userinterface.Usuarios.UsuariosPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -32,25 +32,25 @@ public class ConfirmarCreacionUsuario implements Task {
                 Click.on(UsuariosPage.BOTON_GUARDAR)
         );
 
-        System.out.println("🖱️ Se hizo clic en el botón Guardar/Crear usuario.");
+        System.out.println(" Se hizo clic en el botón Guardar/Crear usuario.");
 
         // Paso 2: Manejar la alerta del navegador
         WebDriver driver = BrowseTheWeb.as(actor).getDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 5); // ✅ Compatible con Selenium 3
+        WebDriverWait wait = new WebDriverWait(driver, 5); //  Compatible con Selenium 3
 
         try {
             // Pausa breve para dejar que aparezca la alerta
             Thread.sleep(500);
 
             Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-            System.out.println("✅ Alerta detectada: " + alert.getText());
+            System.out.println(" Alerta detectada: " + alert.getText());
             alert.accept();
-            System.out.println("✅ Alerta aceptada correctamente.");
+            System.out.println(" Alerta aceptada correctamente.");
 
         } catch (NoAlertPresentException e) {
-            System.out.println("⚠️ No se encontró alerta en el tiempo esperado.");
+            System.out.println(" No se encontró alerta en el tiempo esperado.");
         } catch (Exception e) {
-            System.out.println("❌ Error al manejar la alerta: " + e.getMessage());
+            System.out.println(" Error al manejar la alerta: " + e.getMessage());
         }
 
         // Paso 3: Verificar que el mensaje de éxito aparezca en el HTML
@@ -59,7 +59,7 @@ public class ConfirmarCreacionUsuario implements Task {
                 Ensure.that(UsuariosPage.MENSAJE_EXITO).isDisplayed()
         );
 
-        System.out.println("✅ Mensaje de éxito verificado correctamente en la página.");
+        System.out.println(" Mensaje de éxito verificado correctamente en la página.");
     }
 }
 

@@ -23,7 +23,7 @@ public class IrAlModuloUsuarios implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        // Localiza el div del acceso rápido por su routerlink
+
         Target ACCESO_RAPIDO = Target.the("acceso rápido del módulo " + modulo)
                 .locatedBy("//div[@routerlink='/usuarios']");
 

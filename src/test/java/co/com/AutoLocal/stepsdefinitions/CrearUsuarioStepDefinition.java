@@ -1,10 +1,11 @@
 package co.com.AutoLocal.stepsdefinitions;
 
+import co.com.AutoLocal.models.UsuarioData;
 import co.com.AutoLocal.tasks.CreacionUsuarios.ConfirmarCreacionUsuario;
 import co.com.AutoLocal.tasks.CreacionUsuarios.CrearUsuario;
 import co.com.AutoLocal.tasks.CreacionUsuarios.IrAlModuloUsuarios;
 import co.com.AutoLocal.tasks.CreacionUsuarios.IniciarSesion;
-import co.com.AutoLocal.userinterface.CreacionUsuarios.UsuariosPage;
+import co.com.AutoLocal.userinterface.Usuarios.UsuariosPage;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -59,9 +60,9 @@ public class CrearUsuarioStepDefinition {
     }
 
     @Cuando("^completa el formulario con los datos del usuario$")
-    public void completaElFormularioConLosDatosDelUsuario(List<Map<String, String>> datos) {
+    public void completaElFormularioConLosDatosDelUsuario(List<UsuarioData> datos) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                CrearUsuario.conLosDatos(datos.get(0))
+                CrearUsuario.conDatos(datos.get(0))
         );
     }
 

@@ -1,4 +1,4 @@
-package co.com.AutoLocal.userinterface.CreacionUsuarios;
+package co.com.AutoLocal.userinterface.Usuarios;
 
 
 import net.serenitybdd.screenplay.targets.Target;

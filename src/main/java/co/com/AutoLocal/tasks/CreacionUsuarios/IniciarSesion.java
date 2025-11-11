@@ -1,7 +1,7 @@
 package co.com.AutoLocal.tasks.CreacionUsuarios;
 
 
-import co.com.AutoLocal.userinterface.CreacionUsuarios.LoginPage;
+import co.com.AutoLocal.userinterface.Usuarios.LoginPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;

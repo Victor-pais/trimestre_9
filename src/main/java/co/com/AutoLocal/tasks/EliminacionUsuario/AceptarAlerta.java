@@ -14,10 +14,9 @@ public class AceptarAlerta implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        // Accede al WebDriver del actor
+
         Alert alerta = BrowseTheWeb.as(actor).getDriver().switchTo().alert();
-        // Acepta la alerta
-        alerta.accept();
+               alerta.accept();
     }
 }
 

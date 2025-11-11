@@ -2,7 +2,7 @@ package co.com.AutoLocal.tasks.EliminacionUsuario;
 
 
 
-import co.com.AutoLocal.userinterface.CreacionUsuarios.UsuariosPage;
+import co.com.AutoLocal.userinterface.Usuarios.UsuariosPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

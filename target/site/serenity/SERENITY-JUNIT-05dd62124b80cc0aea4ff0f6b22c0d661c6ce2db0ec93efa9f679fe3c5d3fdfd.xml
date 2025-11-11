@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Eliminar usuario del sistema" skipped="0" tests="1" time="20.16" timestamp="2025-11-09 11:48:34"><testcase name="Eliminar un usuario existente"><failure message="&#13;&#10;Expected: is &lt;true&gt;&#13;&#10;     but: was &lt;false&gt;" type="java.lang.AssertionError">&#13;
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Eliminar usuario del sistema" skipped="0" tests="1" time="14.75" timestamp="2025-11-11 04:54:18"><testcase name="Eliminar un usuario existente"><failure message="&#13;&#10;Expected: is &lt;true&gt;&#13;&#10;     but: was &lt;false&gt;" type="java.lang.AssertionError">&#13;
 Expected: is &lt;true&gt;&#13;
      but: was &lt;false&gt;</failure><system-err>&#13;
 Expected: is &lt;true&gt;&#13;
      but: was &lt;false&gt;&#13;
-co.com.AutoLocal.stepsdefinitions.EliminarUsuarioStepDefinitions.validarEliminacion(EliminarUsuarioStepDefinitions.java:32)&#13;
+co.com.AutoLocal.stepsdefinitions.EliminarUsuarioStepDefinitions.validarEliminacion(EliminarUsuarioStepDefinitions.java:30)&#13;
 ✽.el sistema confirma que el usuario "rafa" ya no está en la tabla(src/test/resources/features/eliminar_usuario.feature:13)&#13;
 </system-err></testcase></testsuite>
