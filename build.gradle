@@ -52,14 +52,6 @@ dependencies {
 
 test {
     useJUnit()
-
-    include '**/*Test.class'
-    include '**/*Tests.class'
-    include '**/*Runner.class'
-
-    testLogging {
-        events "passed", "skipped", "failed"
-        exceptionFormat "full"
-        showStandardStreams = true
-    }
+    systemProperty "cucumber.options", "--plugin pretty --plugin json:target/cucumber.json"
+    finalizedBy "aggregate"
 }

@@ -9,8 +9,7 @@ public class MensajeExitoActualizacion implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-        // Obtiene el texto del mensaje de éxito
-        return Text.of(UsuariosPage.MENSAJE_EXITO)
+            return Text.of(UsuariosPage.MENSAJE_EXITO)
                 .viewedBy(actor)
                 .asString();
     }

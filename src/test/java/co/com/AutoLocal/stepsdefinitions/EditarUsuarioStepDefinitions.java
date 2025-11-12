@@ -30,7 +30,7 @@ public class EditarUsuarioStepDefinitions {
         OnStage.theActorInTheSpotlight().should(
                 seeThat("Mensaje de éxito visible",
                         MensajeExitoActualizacion.visible(),
-                        containsString("actualizado"))
+                        containsString("Usuario registrado con éxito"))
         );
     }
 }

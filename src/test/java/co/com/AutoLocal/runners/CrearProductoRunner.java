@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/crear_producto.feature",
         glue = {"co.com.AutoLocal.stepsdefinitions"},
         snippets = SnippetType.CAMELCASE,
-        plugin = {"pretty"}
+        plugin = {"pretty", "html:target/cucumber-reports"}
 )
 public class CrearProductoRunner {
 

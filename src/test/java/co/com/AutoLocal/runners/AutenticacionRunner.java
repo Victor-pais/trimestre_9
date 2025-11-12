@@ -11,5 +11,6 @@ import org.junit.runner.RunWith;
         glue = {"co.com.AutoLocal.stepsdefinitions", "co.com.AutoLocal.utils.hooks"},
         snippets = SnippetType.CAMELCASE)
 
+
 public class AutenticacionRunner {
 }

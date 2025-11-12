@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Autenticacion en la pagina de Facebook","Verificar la autenticacion exitosa en la pagina de Facebook","SUCCESS","2025-11-04T13:31:05.1511382-05:00[America/Bogota]","0.0","8.53"
+"Autenticación en la página de Practice Test Automation","Verificar la autenticación exitosa en la pagina de Practice Test Automation","SUCCESS","2025-11-05T03:25:13.0572707-05:00[America/Bogota]","0.0","14.74"
+"Autenticación en mi página local","Inicio de sesión exitoso","SUCCESS","2025-11-09T20:33:32.0860856-05:00[America/Bogota]","0.0","10.29"
+"Crear un nuevo producto en el sistema","Crear un producto exitosamente","SUCCESS","2025-11-11T19:31:44.2602607-05:00[America/Bogota]","0.0","41.58"
+"Editar usuario existente","Editar un usuario existente exitosamente","SUCCESS","2025-11-11T19:29:43.4101954-05:00[America/Bogota]","0.0","35.52"
+"Eliminar producto del sistema","Eliminar un producto existente","SUCCESS","2025-11-11T19:33:28.1353379-05:00[America/Bogota]","0.0","50.56"

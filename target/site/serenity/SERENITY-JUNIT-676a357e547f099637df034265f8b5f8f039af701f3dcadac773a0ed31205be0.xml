@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Editar usuario existente" skipped="0" tests="1" time="31.34" timestamp="2025-11-10 05:18:26"><testcase name="Editar un usuario existente exitosamente"><failure message="&#13;&#10;Expected: a string containing &quot;actualizado&quot;&#13;&#10;     but: was &quot;✅ Usuario registrado con éxito.&#10;×&quot;" type="java.lang.AssertionError">&#13;
-Expected: a string containing "actualizado"&#13;
-     but: was "✅ Usuario registrado con éxito.
-×"</failure><system-err>&#13;
-Expected: a string containing "actualizado"&#13;
-     but: was "✅ Usuario registrado con éxito.
-×"&#13;
-co.com.AutoLocal.stepsdefinitions.EditarUsuarioStepDefinitions.validarMensajeExito(EditarUsuarioStepDefinitions.java:30)&#13;
-✽.el sistema muestra un mensaje de éxito al actualizar el usuario(src/test/resources/features/editar_usuario.feature:13)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Editar usuario existente" skipped="0" tests="1" time="35.52" timestamp="2025-11-11 07:29:43"><testcase name="Editar un usuario existente exitosamente"/></testsuite>

@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/editar_usuario.feature",
         glue = "co.com.AutoLocal.stepsdefinitions",
+        plugin = {"pretty", "html:target/cucumber-reports"},
         snippets = SnippetType.CAMELCASE
 )
 public class EditarUsuarioRunner {
