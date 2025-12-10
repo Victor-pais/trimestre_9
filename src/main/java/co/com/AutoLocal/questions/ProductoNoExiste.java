@@ -1,9 +1,12 @@
 package co.com.AutoLocal.questions;
 
-import co.com.AutoLocal.userinterface.Productos.ProductosPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import org.openqa.selenium.NoSuchElementException;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductoNoExiste implements Question<Boolean> {
 
@@ -19,23 +22,17 @@ public class ProductoNoExiste implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        try {
 
-            for (int i = 0; i < 10; i++) {
-                boolean existe = ProductosPage.botonEliminarDelProducto(nombre)
-                        .resolveFor(actor)
-                        .isPresent();
-                if (!existe) {
-                    return true;
-                }
-                Thread.sleep(500);
-            }
-            return false;
-        } catch (NoSuchElementException e) {
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+        WebDriver driver = BrowseTheWeb.as(actor).getDriver();
+
+        String xpath = "//td[contains(text(),'" + nombre + "')]";
+
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+
+
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath(xpath), 0));
+
+        return driver.findElements(By.xpath(xpath)).isEmpty();
     }
+
 }

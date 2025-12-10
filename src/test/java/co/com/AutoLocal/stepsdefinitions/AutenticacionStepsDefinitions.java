@@ -28,6 +28,6 @@ public class AutenticacionStepsDefinitions {
 
     @Entonces("^debería ver el mensaje Panel de Administración Sox$")
     public void deberiaVerElMesajePanelDeAdministracionSox(){
-        // Aquí se validará el mensaje de éxito
+
     }
 }

@@ -4,6 +4,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class UsuarioNoExiste implements Question<Boolean> {
 
@@ -19,8 +24,16 @@ public class UsuarioNoExiste implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return BrowseTheWeb.as(actor).getDriver()
-                .findElements(By.xpath("//td[contains(text(),'" + nombre + "')]"))
-                .isEmpty();
+
+        WebDriver driver = BrowseTheWeb.as(actor).getDriver();
+
+        By filaUsuario = By.xpath("//td[contains(text(),'" + nombre + "')]");
+
+        // Esperar con el constructor compatible
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(filaUsuario));
+
+        return driver.findElements(filaUsuario).isEmpty();
     }
+
 }

@@ -27,9 +27,6 @@ public class CrearUsuarioStepDefinition {
         OnStage.setTheStage(new OnlineCast());
     }
 
-    // ----------------------------
-    // ANTECEDENTES
-    // ----------------------------
 
     @Dado("^que el administrador ha iniciado sesion en el sistema$")
     public void queElAdministradorHaIniciadoSesionEnElSistema() {
@@ -39,12 +36,9 @@ public class CrearUsuarioStepDefinition {
 
     @Dado("^se encuentra en la pagina del menu principal$")
     public void seEncuentraEnLaPaginaDelMenuPrincipal() {
-        // Aquí podrías agregar una validación de URL o simplemente dejarlo vacío
+
     }
 
-    // ----------------------------
-    // ESCENARIO: Crear un nuevo usuario exitosamente
-    // ----------------------------
 
     @Cuando("^el administrador hace clic en el acceso rapido \\\"(.*)\\\"$")
     public void elAdministradorHaceClicEnElAccesoRapido(String modulo) {
@@ -56,7 +50,7 @@ public class CrearUsuarioStepDefinition {
     @Cuando("^hace clic en el boton \\\"(.*)\\\"$")
     public void haceClicEnElBoton(String boton) {
         System.out.println("El administrador hace clic en el botón: " + boton);
-        // Si el botón es "Nuevo", ya lo maneja CrearUsuario
+
     }
 
     @Cuando("^completa el formulario con los datos del usuario$")

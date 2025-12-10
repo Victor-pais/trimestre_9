@@ -8,5 +8,5 @@ Característica: Eliminar producto del sistema
 
   Escenario: Eliminar un producto existente
     Cuando el administrador accede al modulo Productos
-    Y elimina el producto "Producto Test"
-    Entonces el sistema confirma que el producto "Producto Test" ya no está en la tabla
+    Y elimina el producto "Producto Editado"
+    Entonces el sistema confirma que el producto "Producto Editado" ya no está en la tabla

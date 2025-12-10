@@ -26,9 +26,6 @@ public class CrearProductoStepDefinition {
         OnStage.setTheStage(new OnlineCast());
     }
 
-    // ----------------------------
-    // ANTECEDENTES
-    // ----------------------------
 
     @Dado("^que el administrador ingreso al sistema$")
     public void queElAdministradorIngresoAlSistema() {
@@ -38,12 +35,9 @@ public class CrearProductoStepDefinition {
 
     @Dado("^se encuentra en la pagina principal$")
     public void seEncuentraEnLaPaginaPrincipal() {
-        // Validación opcional o vacío
-    }
+            }
 
-    // ----------------------------
-    // ESCENARIO: Crear producto
-    // ----------------------------
+
 
     @Cuando("^el administrador accede al modulo Productos$")
     public void elAdministradorAccedeAlModuloProductos() {
